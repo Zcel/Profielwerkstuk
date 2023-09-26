@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWS</title>
     <script src="js/script.js"></script>
+    <script defer src="js/face-api.min.js"></script>
+    <script defer src="js/recognition.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div id="camera-container">
+    <div id="camera-container" class="camera-container">
+        <img src="img/camera.png">
         <video id="video-preview" autoplay></video>
         <button id="start-camera-button">Start Camera</button>
+        <button id="stop-camera-button">Stop Camera</button>
+        <button id="reset-filters-button">Reset Filters</button>
+        <p id="camera-status">Camera Status: OFF</p>
+        <label for="brightness-slider">Brightness: <span id="brightness-value">100</span></label>
+        <input type="range" id="brightness-slider" min="0" max="200" step="1" value="100">
+        <label for="hue-slider">Hue:</label>
+        <input type="range" id="hue-slider" min="0" max="360" step="1" value="0">
+        <span id="hue-value">0</span>
+        <label for="saturation-slider">Saturation:</label>
+        <input type="range" id="saturation-slider" min="0" max="200" step="1" value="100">
+        <span id="saturation-value">100</span>
     </div>
 </body>
 </html>

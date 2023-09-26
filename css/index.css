@@ -1,23 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
+    background-color: #2f3b50;
   }
   
   #camera-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20vh;
+  }
+
+  .camera-container img{
+    height: 400px;
+    padding-top: 50px;
+    position:absolute;
+    z-index: -1;
   }
   
   #video-preview {
     width: 100%;
     max-width: 640px;
+    height: 450px;
+    border: 1px solid white;
   }
   
   #start-camera-button {
     margin-top: 10px;
+  }
+  canvas{
+    position: absolute;
   }
