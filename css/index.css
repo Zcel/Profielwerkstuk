@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
     display: flex;
@@ -10,12 +11,20 @@ body {
     justify-content: center;
     background-color: #2f3b50;
   }
-  
+  .camera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+  }
   #camera-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 20vh;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
   }
 
   .camera-container img{
@@ -24,10 +33,53 @@ body {
     position:absolute;
     z-index: -1;
   }
-  
+  .camera-options{
+    display: flex;
+    flex-direction: column;
+  }
+  .camera-option{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .camera-option span{
+    background-color: #273040;
+    color: #5d687b;
+    padding: 5px 10px;
+  }
+  .camera-option input, label{
+    padding: 5px 0px;
+    height: 30px;
+    color: #5d687b;
+  }
+  .camera-option input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+  }
+  .camera-option input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+   appearance: none;
+   margin-top: -8px; /* Centers thumb on the track */
+   background-color: #3eb372;
+   height: 1rem;
+   width: 1rem; 
+   border-radius: 50%;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 1px;
+    background: #929292;
+  }
+  .camera-status{
+    color: red;
+  }
   #video-preview {
     width: 100%;
-    max-width: 640px;
+    max-width: 600px;
     height: 450px;
     border: 1px solid white;
   }

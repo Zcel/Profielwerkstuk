@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoElement = document.getElementById('video-preview');
   const startButton = document.getElementById('start-camera-button');
   const stopButton = document.getElementById('stop-camera-button');
-  const cameraStatusElement = document.getElementById('camera-status');
+  const cameraStatusElement = document.querySelector('#camera-status span');
   const brightnessSlider = document.getElementById('brightness-slider');
   const brightnessValueElement = document.getElementById('brightness-value');
   const hueSlider = document.getElementById('hue-slider');
@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
       videoElement.srcObject = videoStream;
-      cameraStatusElement.innerText = 'Camera Status: ON';
+      cameraStatusElement.innerText = 'ON';
+      cameraStatusElement.style.color = '#ffcc66'; // Change color to #ffcc66 for ON
     } catch (error) {
       console.error('Error accessing the camera:', error);
     }
@@ -39,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (videoStream) {
       videoStream.getTracks().forEach(track => track.stop());
       videoElement.srcObject = null;
-      cameraStatusElement.innerText = 'Camera Status: OFF';
+      cameraStatusElement.innerText = 'OFF';
+      cameraStatusElement.style.color = 'red'; // Change color back to red for OFF
     }
   };
 
