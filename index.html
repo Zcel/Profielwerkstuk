@@ -14,12 +14,16 @@
             <video id="video-preview" autoplay></video>
         </div>
         <div class="camera-options">
-            <p id="camera-status">Camera Status: <span class="camera-status">OFF</span></p>
-            <button id="start-camera-button">Start Camera</button>
-            <button id="stop-camera-button">Stop Camera</button>
-            <button id="reset-filters-button">Reset Filters</button>
+            <p id="camera-status" style="color: white;">Camera Status: <span class="camera-status">OFF</span></p>
             <br>
-            <h1>Threshhold</h1>
+            <h2>Controls</h2>
+            <div class="camera-controls">
+                <button id="start-camera-button">Start Camera</button>
+                <button id="stop-camera-button">Stop Camera</button>
+                <button id="reset-filters-button">Reset Filters</button>
+            </div>
+            <br>
+            <h2>Threshhold</h2>
             <div class="camera-options" style="flex-direction: row; gap: 20px;">
                 <div class="camera-option">
                     <label for="brightness-slider">Brightness: </label>
@@ -36,6 +40,12 @@
                     <span id="hue-value">0</span>
                     <span id="saturation-value">100</span>
                 </div>
+            </div>
+            <br>
+            <h2>Options</h2>
+            <div class="camera-controls under">
+                <button id="capture-button">Take Screenshot</button>
+                <div id="screenshot-container"></div>
             </div>
         </div>
     </div>

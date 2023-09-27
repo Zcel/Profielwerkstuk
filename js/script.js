@@ -59,3 +59,23 @@ document.addEventListener('DOMContentLoaded', () => {
   saturationSlider.addEventListener('input', updateFilters);
   resetFiltersButton.addEventListener('click', resetFilters);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const videoElement = document.getElementById('video-preview');
+  const captureButton = document.getElementById('capture-button');
+  const screenshotContainer = document.getElementById('screenshot-container');
+
+  const takeScreenshot = () => {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    const img = new Image();
+    img.src = canvas.toDataURL('image/jpeg');
+    screenshotContainer.innerHTML = '';  // Clear previous screenshot
+    screenshotContainer.appendChild(img);
+  };
+
+  captureButton.addEventListener('click', takeScreenshot);
+});
